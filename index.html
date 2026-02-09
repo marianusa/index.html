@@ -9,18 +9,25 @@
       background-color: #fff8f0;
       color: #333;
       margin: 20px;
+      overflow-x: hidden; /* evita scroll horizontal si animamos */
     }
     h1 {
       color: #1e90ff;
       text-align: center;
+      animation: aparecer 2s ease-in-out;
     }
     h2 {
       color: #2c3e50;
       margin-top: 25px;
+      position: relative;
+      animation: mover 3s infinite alternate;
     }
     p {
       font-size: 16px;
       line-height: 1.5;
+      opacity: 0;
+      animation: aparecer 2s forwards;
+      animation-delay: 0.5s;
     }
     ul {
       margin-left: 20px;
@@ -31,6 +38,7 @@
       width: 250px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      animation: girar 5s linear infinite;
     }
     a {
       color: #e74c3c;
@@ -50,9 +58,25 @@
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+      transition: transform 0.3s;
     }
     .boton-inscripcion:hover {
       background-color: #1565c0;
+      transform: scale(1.1);
+    }
+
+    /* Animaciones */
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes girar {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes mover {
+      from { left: 0px; }
+      to { left: 10px; }
     }
   </style>
 </head>
@@ -63,18 +87,22 @@
   <p>
     Hola, me llamo María y vivo en Elda, en la provincia de Alicante, 
     una región encantadora con un clima excelente para pasar largas temporadas 
-    y aprender español. Aquí aprenderás el idioma de manera divertida y efectiva, 
-    con materiales adaptados a tu nivel.
+    y aprender español. ¡Prepárate para disfrutar mientras aprendes!
+  </p>
+
+  <p>
+    Nuestras clases son divertidas y dinámicas. Aquí no solo aprenderás gramática y vocabulario, 
+    también practicarás conversación, juegos, música y cultura española.
   </p>
 
   <img src="https://via.placeholder.com/250" alt="Clases de español">
 
   <h2>Nuestros cursos</h2>
   <ul>
-    <li><strong>Nivel A1:</strong> Español básico para comenzar a comunicarte</li>
-    <li><strong>Nivel A2:</strong> Mejorando la comunicación cotidiana</li>
-    <li><strong>Nivel B1:</strong> Comprensión y expresión más complejas</li>
-    <li><strong>Nivel B2:</strong> Preparación para exámenes y conversación avanzada</li>
+    <li><strong>Nivel A1:</strong> Español básico para comenzar a comunicarte. ¡Vamos paso a paso!</li>
+    <li><strong>Nivel A2:</strong> Mejorando la comunicación cotidiana con actividades divertidas.</li>
+    <li><strong>Nivel B1:</strong> Comprensión y expresión más complejas. ¡Preparados para retos! 😃</li>
+    <li><strong>Nivel B2:</strong> Preparación para exámenes y conversación avanzada. ¡Hablamos como nativos!</li>
   </ul>
 
   <h2>Lo que dicen nuestros estudiantes</h2>
@@ -83,7 +111,13 @@
     y entender películas sin subtítulos." – Ana, Francia
   </p>
   <p>
-    "María es una profesora paciente y amable. Aprender español aquí es divertido." – Tom, Estados Unidos
+    "María es una profesora paciente y amable. Aprender español aquí es divertido y motivador." – Tom, Estados Unidos
+  </p>
+
+  <h2>¡Ven a aprender español en Elda!</h2>
+  <p>
+    Disfruta del sol, la playa cercana y la cultura española mientras mejoras tu español. 
+    Cada clase es una aventura: juegos, canciones y conversaciones reales. ¡No te aburrirás nunca!
   </p>
 
   <h2>Contacto</h2>
@@ -96,3 +130,4 @@
 
 </body>
 </html>
+
